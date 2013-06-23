@@ -60,8 +60,8 @@ function check_product()
         return
     fi
 
-    if (echo -n $1 | grep -q -e "^rootbox_") ; then
-       RB_PRODUCT=$(echo -n $1 | sed -e 's/^rootbox_//g')
+    if (echo -n $1 | grep -q -e "^novagen_") ; then
+       RB_PRODUCT=$(echo -n $1 | sed -e 's/^novagen_//g')
     else
        RB_PRODUCT=
     fi
@@ -447,7 +447,7 @@ function print_lunch_menu()
     echo
     echo "You're building on" $uname
     echo
-    if [ "z${ROOTBOX_DEVICES_ONLY}" != "z" ]; then
+    if [ "z${NOVAGEN_DEVICES_ONLY}" != "z" ]; then
        echo "Breakfast menu... pick a combo:"
     else
        echo "Lunch menu... pick a combo:"
@@ -461,7 +461,7 @@ function print_lunch_menu()
         i=$(($i+1))
     done
 
-    if [ "z${ROOTBOX_DEVICES_ONLY}" != "z" ]; then
+    if [ "z${NOVAGEN_DEVICES_ONLY}" != "z" ]; then
        echo "... and don't forget the bacon!"
     fi
 
@@ -483,10 +483,10 @@ function brunch()
 function breakfast()
 {
     target=$1
-    ROOTBOX_DEVICES_ONLY="true"
+    NOVAGEN_DEVICES_ONLY="true"
     unset LUNCH_MENU_CHOICES
     add_lunch_combo full-eng
-    for f in `/bin/ls vendor/rootbox/vendorsetup.sh 2> /dev/null`
+    for f in `/bin/ls vendor/novagen/vendorsetup.sh 2> /dev/null`
         do
             echo "including $f"
             . $f
@@ -502,7 +502,7 @@ function breakfast()
             # A buildtype was specified, assume a full device name
             lunch $target
         else
-            lunch rootbox_$target-userdebug
+            lunch novagen_$target-userdebug
         fi
     fi
     return $?
@@ -1243,7 +1243,7 @@ function mka() {
 function mbot() {
     unset LUNCH_MENU_CHOICES
     croot
-    ./vendor/rootbox/bot/deploy.sh
+    ./vendor/novagen/bot/deploy.sh
 }
 
 function mkapush() {
