@@ -429,7 +429,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("*       g   g   e      n  nn         *")
   script.Print("*        ggg    eeeee  n   n         *")
   script.Print("*                                    *")
-  script.Print("*************************************") 
+  script.Print("**************************************") 
 
 
   if OPTIONS.wipe_user_data:
