@@ -413,6 +413,8 @@ def WriteFullOTAPackage(input_zip, output_zip):
     script.Unmount("/system")
 
   script.ShowProgress(0.5, 0)
+  script.Print("");
+  script.Print(" __    __");
   script.Print("|  \\\\  |  \\\\");
   script.Print("| **\\\\ | **  ______  __     __  ______");
   script.Print("| ***\\\\| ** /      \\\\|  \\\\   /  \\\\|      \\\\");
@@ -459,9 +461,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("")
   script.Print("**************************************")
   script.Print("*                                    *")
-  script.Print("*                                    *")
-  script.Print("*           RUNNING BACKUP TOOL      *")
-  script.Print("*                                    *")
+  script.Print("*         RUNNING BACKUP TOOL        *")
   script.Print("*                                    *")
   script.Print("**************************************")
   if OPTIONS.backuptool:
@@ -473,9 +473,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("")
   script.Print("**************************************")
   script.Print("*                                    *")
-  script.Print("*                                    *")
   script.Print("*          FLASHING KERNEL           *")
-  script.Print("*                                    *")
   script.Print("*                                    *")
   script.Print("**************************************")
   script.WriteRawImage("/boot", "boot.img")
@@ -483,9 +481,7 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("")
   script.Print("**************************************")
   script.Print("*                                    *")
-  script.Print("*                                    *")
   script.Print("*         NOVAGEN INSTALLED          *")
-  script.Print("*                                    *")
   script.Print("*                                    *")
   script.Print("**************************************")
   script.ShowProgress(0.1, 0)
