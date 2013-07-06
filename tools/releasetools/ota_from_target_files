@@ -424,8 +424,8 @@ def WriteFullOTAPackage(input_zip, output_zip):
   script.Print("| **  \\\\*** \\\\**    **   \\\\***   \\\\**    **");
   script.Print(" \\\\**   \\\\**  \\\\******     \\\\*     \\\\*******");
   script.Print("");
-  script.Print("    ______");
-  script.Print("   /      \\\\");
+  script.Print("     ______");
+  script.Print("    /      \\\\");
   script.Print("   |  ******\\\\  ______   _______");
   script.Print("   | ** __\\\\** /      \\\\ |       \\\\");
   script.Print("   | **|    \\\\|  ******\\\\| *******\\\\");
